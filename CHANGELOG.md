@@ -1,5 +1,6 @@
 ## 2.3.1 (Unreleased)
 Adds API 500 support to the following HPE OneView resources:
+  - oneview_fc_network resource
   - oneview_scope resource
 
 Enhancements:
