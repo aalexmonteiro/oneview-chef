@@ -1,4 +1,8 @@
-# (c) Copyright 2016 Hewlett Packard Enterprise Development LP
+#
+# Cookbook Name:: oneview_test_api300_c7000
+# Recipe:: ethernet_network_replace_scopes
+#
+# (c) Copyright 2017 Hewlett Packard Enterprise Development LP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -8,15 +12,10 @@
 # under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 # CONDITIONS OF ANY KIND, either express or implied. See the License for the
 # specific language governing permissions and limitations under the License.
+#
 
-require_relative '../c7000/ethernet_network_provider'
-
-module OneviewCookbook
-  module API300
-    module Synergy
-      # EthernetNetworkProvider API300 Synergy provider
-      class EthernetNetworkProvider < API300::C7000::EthernetNetworkProvider
-      end
-    end
-  end
+oneview_ethernet_network 'EthernetNetwork1' do
+  client node['oneview_test']['client']
+  scopes ['Scope1', 'Scope2']
+  action :replace_scopes
 end

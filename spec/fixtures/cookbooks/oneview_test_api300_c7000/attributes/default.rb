@@ -1,4 +1,8 @@
-# (c) Copyright 2016 Hewlett Packard Enterprise Development LP
+#
+# Cookbook Name:: oneview_test_api300_c7000
+# Attributes:: default
+#
+# (c) Copyright 2017 Hewlett Packard Enterprise Development LP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -8,15 +12,9 @@
 # under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 # CONDITIONS OF ANY KIND, either express or implied. See the License for the
 # specific language governing permissions and limitations under the License.
+#
 
-require_relative '../c7000/ethernet_network_provider'
+default['oneview']['api_version'] = 300
+default['oneview']['api_variant'] = 'C7000'
 
-module OneviewCookbook
-  module API300
-    module Synergy
-      # EthernetNetworkProvider API300 Synergy provider
-      class EthernetNetworkProvider < API300::C7000::EthernetNetworkProvider
-      end
-    end
-  end
-end
+default['oneview_test']['client'] = { url: 'https://oneview.example.com', user: 'Administrator', password: 'secret123', api_version: 300 }
